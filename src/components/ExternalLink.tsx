@@ -21,11 +21,15 @@ export function ExternalLink({
       {...props}
       className={className}
       target={target ?? "_blank"}
-      rel={rel ?? "noreferrer"}
+      rel={rel ?? "noopener noreferrer"}
     >
       {children}
-      {!hideIcon ? <FiArrowUpRight aria-hidden="true" className="shrink-0" /> : null}
-      {showNewTabText ? <span className="sr-only"> Abre em nova guia</span> : null}
+      {!hideIcon ? (
+        <FiArrowUpRight aria-hidden="true" className="shrink-0" />
+      ) : null}
+      {showNewTabText ? (
+        <span className="sr-only"> Abre em nova guia</span>
+      ) : null}
     </a>
   );
 }

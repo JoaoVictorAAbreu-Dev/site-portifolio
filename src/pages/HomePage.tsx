@@ -23,7 +23,10 @@ import {
   timeline,
 } from "../data/portfolio";
 import { MainLayout } from "../layouts/MainLayout";
-import { isContactFormConfigured, submitContactForm } from "../services/contact";
+import {
+  isContactFormConfigured,
+  submitContactForm,
+} from "../services/contact";
 import { usePageMeta } from "../utils/meta";
 
 type ContactStatus = "idle" | "sending" | "sent" | "error";
@@ -78,8 +81,9 @@ export function HomePage() {
             {...reveal(0.12)}
             className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300"
           >
-            Construo APIs, produtos orientados a dados e sistemas que transformam informação
-            técnica em fluxo operacional, análise e decisão.
+            Construo APIs, produtos orientados a dados e sistemas que
+            transformam informação técnica em fluxo operacional, análise e
+            decisão.
           </motion.p>
 
           <motion.div {...reveal(0.16)} className="mt-10 flex flex-wrap gap-4">
@@ -98,7 +102,10 @@ export function HomePage() {
             className="mt-8 flex flex-wrap items-center gap-5 text-sm text-slate-600 dark:text-slate-300"
           >
             <span className="inline-flex items-center gap-2">
-              <FiMapPin aria-hidden="true" className="text-brand-600 dark:text-cyan-300" />
+              <FiMapPin
+                aria-hidden="true"
+                className="text-brand-600 dark:text-cyan-300"
+              />
               São Paulo, SP
             </span>
             <ExternalLink
@@ -122,7 +129,10 @@ export function HomePage() {
           </motion.div>
         </div>
 
-        <motion.div {...reveal(0.08)} className="flex flex-col justify-center gap-6">
+        <motion.div
+          {...reveal(0.08)}
+          className="flex flex-col justify-center gap-6"
+        >
           <ProfilePhoto />
           <div className="hero-panel">
             <p className="eyebrow">Base atual</p>
@@ -132,8 +142,12 @@ export function HomePage() {
                   key={item.label}
                   className="flex flex-col gap-1 border-b border-slate-200/80 pb-4 last:border-0 last:pb-0 dark:border-white/10"
                 >
-                  <span className="text-sm text-slate-500 dark:text-slate-400">{item.label}</span>
-                  <span className="font-medium text-slate-900 dark:text-white">{item.value}</span>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">
+                    {item.label}
+                  </span>
+                  <span className="font-medium text-slate-900 dark:text-white">
+                    {item.value}
+                  </span>
                 </div>
               ))}
             </div>
@@ -141,7 +155,11 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      <section id="sobre" aria-labelledby="sobre-heading" className="section-shell pt-10">
+      <section
+        id="sobre"
+        aria-labelledby="sobre-heading"
+        className="section-shell pt-10"
+      >
         <SectionHeading
           id="sobre-heading"
           eyebrow="Sobre"
@@ -151,18 +169,27 @@ export function HomePage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div {...reveal()} className="glass-card space-y-5">
             {aboutPoints.map((point) => (
-              <p key={point} className="text-base leading-8 text-slate-600 dark:text-slate-300">
+              <p
+                key={point}
+                className="text-base leading-8 text-slate-600 dark:text-slate-300"
+              >
                 {point}
               </p>
             ))}
           </motion.div>
           <div className="grid gap-5">
             {highlights.map(({ icon: Icon, title, description }, index) => (
-              <motion.article key={title} {...reveal(0.05 * index)} className="surface-card">
+              <motion.article
+                key={title}
+                {...reveal(0.05 * index)}
+                className="surface-card"
+              >
                 <div className="icon-badge">
                   <Icon size={18} />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-slate-950 dark:text-white">{title}</h3>
+                <h3 className="mt-5 text-xl font-semibold text-slate-950 dark:text-white">
+                  {title}
+                </h3>
                 <p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">
                   {description}
                 </p>
@@ -172,7 +199,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="stack" aria-labelledby="stack-heading" className="section-shell">
+      <section
+        id="stack"
+        aria-labelledby="stack-heading"
+        className="section-shell"
+      >
         <SectionHeading
           id="stack-heading"
           eyebrow="Stack"
@@ -180,7 +211,11 @@ export function HomePage() {
         />
         <div className="mt-12 grid gap-6 xl:grid-cols-2">
           {skillCategories.map((category, index) => (
-            <motion.article key={category.category} {...reveal(0.04 * index)} className="glass-card">
+            <motion.article
+              key={category.category}
+              {...reveal(0.04 * index)}
+              className="glass-card"
+            >
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">
                 {category.category}
               </h3>
@@ -211,7 +246,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="projetos" aria-labelledby="projetos-heading" className="section-shell">
+      <section
+        id="projetos"
+        aria-labelledby="projetos-heading"
+        className="section-shell"
+      >
         <SectionHeading
           id="projetos-heading"
           eyebrow="Projetos"
@@ -229,9 +268,14 @@ export function HomePage() {
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="eyebrow">{project.status}</span>
-                <span className="text-sm text-slate-500 dark:text-slate-400">{project.shortTitle}</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400">
+                  {project.shortTitle}
+                </span>
               </div>
-              <h3 id={`${project.slug}-title`} className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">
+              <h3
+                id={`${project.slug}-title`}
+                className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white"
+              >
                 {project.title}
               </h3>
               <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">
@@ -248,13 +292,17 @@ export function HomePage() {
 
               <div className="mt-6 space-y-4">
                 <div>
-                  <p className="text-sm font-semibold text-slate-950 dark:text-white">O que o sistema faz</p>
+                  <p className="text-sm font-semibold text-slate-950 dark:text-white">
+                    O que o sistema faz
+                  </p>
                   <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {project.problemSolved}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-950 dark:text-white">Como foi estruturado</p>
+                  <p className="text-sm font-semibold text-slate-950 dark:text-white">
+                    Como foi estruturado
+                  </p>
                   <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {project.architectureUsed}
                   </p>
@@ -280,7 +328,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="jornada" aria-labelledby="jornada-heading" className="section-shell">
+      <section
+        id="jornada"
+        aria-labelledby="jornada-heading"
+        className="section-shell"
+      >
         <SectionHeading
           id="jornada-heading"
           eyebrow="Jornada"
@@ -288,7 +340,11 @@ export function HomePage() {
         />
         <ol className="mt-12 space-y-5">
           {timeline.map((item, index) => (
-            <motion.li key={item.title} {...reveal(0.04 * index)} className="list-none">
+            <motion.li
+              key={item.title}
+              {...reveal(0.04 * index)}
+              className="list-none"
+            >
               <article className="glass-card relative overflow-hidden pl-8">
                 <div className="absolute left-0 top-0 h-full w-1 rounded-full bg-gradient-to-b from-brand-600 to-cyan-300" />
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-600 dark:text-cyan-300">
@@ -306,7 +362,11 @@ export function HomePage() {
         </ol>
       </section>
 
-      <section id="contato" aria-labelledby="contato-heading" className="section-shell">
+      <section
+        id="contato"
+        aria-labelledby="contato-heading"
+        className="section-shell"
+      >
         <SectionHeading
           id="contato-heading"
           eyebrow="Contato"
@@ -314,24 +374,34 @@ export function HomePage() {
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
           <address className="grid gap-4 not-italic">
-            {contactLinks.map(({ icon: Icon, label, value, href, external }) => (
-              <a
-                key={label}
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noreferrer" : undefined}
-                className="glass-card flex items-center gap-4"
-                aria-label={external ? `${label}: ${value}. Abre em nova guia` : `${label}: ${value}`}
-              >
-                <div className="icon-badge">
-                  <Icon size={18} aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{label}</p>
-                  <p className="mt-1 font-medium text-slate-950 dark:text-white">{value}</p>
-                </div>
-              </a>
-            ))}
+            {contactLinks.map(
+              ({ icon: Icon, label, value, href, external }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noreferrer" : undefined}
+                  className="glass-card flex items-center gap-4"
+                  aria-label={
+                    external
+                      ? `${label}: ${value}. Abre em nova guia`
+                      : `${label}: ${value}`
+                  }
+                >
+                  <div className="icon-badge">
+                    <Icon size={18} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      {label}
+                    </p>
+                    <p className="mt-1 font-medium text-slate-950 dark:text-white">
+                      {value}
+                    </p>
+                  </div>
+                </a>
+              ),
+            )}
           </address>
 
           <ContactForm />
@@ -379,7 +449,8 @@ function ContactForm() {
             Formulário de contato
           </h3>
           <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Quando configurado com Formspree, este formulário envia a mensagem sem precisar de backend próprio.
+            Quando configurado com Formspree, este formulário envia a mensagem
+            sem precisar de backend próprio.
           </p>
         </div>
       </div>
@@ -428,21 +499,31 @@ function ContactForm() {
             />
           </label>
 
-          <div className="mt-6 min-h-6">
+          <div className="mt-6 min-h-6" aria-live="polite">
             {status === "sent" ? (
-              <p className="inline-flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-300">
+              <p
+                role="status"
+                className="inline-flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-300"
+              >
                 <FiCheckCircle aria-hidden="true" />
                 Mensagem enviada com sucesso.
               </p>
             ) : null}
             {status === "error" ? (
-              <p className="text-sm text-rose-600 dark:text-rose-300">
+              <p
+                role="alert"
+                className="text-sm text-rose-600 dark:text-rose-300"
+              >
                 Não foi possível enviar no momento. Use email ou LinkedIn.
               </p>
             ) : null}
           </div>
 
-          <button type="submit" className="btn-primary mt-2" disabled={status === "sending"}>
+          <button
+            type="submit"
+            className="btn-primary mt-2"
+            disabled={status === "sending"}
+          >
             <FiArrowRight />
             {status === "sending" ? "Enviando..." : "Enviar mensagem"}
           </button>
@@ -450,10 +531,15 @@ function ContactForm() {
       ) : (
         <div className="mt-8 rounded-[1.5rem] border border-slate-200/80 bg-slate-50/85 p-5 dark:border-white/10 dark:bg-white/[0.03]">
           <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
-            O endpoint do Formspree ainda não foi configurado neste deploy. Enquanto isso, o contato direto por email e LinkedIn permanece disponível.
+            O endpoint do Formspree ainda não foi configurado neste deploy.
+            Enquanto isso, o contato direto por email e LinkedIn permanece
+            disponível.
           </p>
           <div className="mt-5 flex flex-wrap gap-4">
-            <a href="mailto:joaovictoralvesabreu1@gmail.com" className="btn-secondary">
+            <a
+              href="mailto:joaovictoralvesabreu1@gmail.com"
+              className="btn-secondary"
+            >
               <FiMail />
               Enviar email
             </a>

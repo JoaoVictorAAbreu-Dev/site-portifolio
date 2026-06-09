@@ -22,7 +22,9 @@ function resolveRepositoryName() {
 }
 
 const repositoryName = resolveRepositoryName();
-const repositoryOwner = process.env.GITHUB_REPOSITORY_OWNER || "JoaoVictorAAbreu-Dev";
+const repositoryOwner = (
+  process.env.GITHUB_REPOSITORY_OWNER || "joaovictoraabreu-dev"
+).toLowerCase();
 
 const env = {
   ...process.env,

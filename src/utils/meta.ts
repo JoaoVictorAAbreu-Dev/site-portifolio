@@ -84,6 +84,10 @@ export function usePageMeta({ title, description, path = "/" }: MetaOptions) {
       property: "og:image",
       content: imageUrl,
     });
+    upsertMeta('meta[property="og:image:alt"]', {
+      property: "og:image:alt",
+      content: "Foto de perfil de João Victor Alves de Abreu",
+    });
 
     upsertMeta('meta[name="twitter:title"]', {
       name: "twitter:title",
@@ -108,6 +112,10 @@ export function usePageMeta({ title, description, path = "/" }: MetaOptions) {
     upsertMeta('meta[name="twitter:image"]', {
       name: "twitter:image",
       content: imageUrl,
+    });
+    upsertMeta('meta[name="twitter:image:alt"]', {
+      name: "twitter:image:alt",
+      content: "Foto de perfil de João Victor Alves de Abreu",
     });
 
     upsertLink('link[rel="canonical"]', {
