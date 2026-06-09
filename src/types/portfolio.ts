@@ -20,6 +20,7 @@ export type SkillItem = {
   name: string;
   level: string;
   description: string;
+  icon: IconType;
 };
 
 export type ProjectCaseStudy = {
@@ -66,6 +67,7 @@ export type ContactLink = {
   value: string;
   href: string;
   icon: IconType;
+  external?: boolean;
 };
 
 export type HighlightItem = {

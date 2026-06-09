@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { FormEvent } from "react";
-import { FiArrowRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiMapPin, FiZap } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { ProfilePhoto } from "../components/ProfilePhoto";
 import { ProjectVisual } from "../components/ProjectVisual";
@@ -31,7 +31,9 @@ export function HomePage() {
 
   return (
     <MainLayout>
-      <section className="mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28 lg:pt-20">
+      <section className="relative mx-auto grid max-w-7xl gap-14 overflow-hidden px-5 pb-20 pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28 lg:pt-20">
+        <div className="hero-orb right-[4%] top-[6%] h-40 w-40 bg-brand-500/20" />
+        <div className="hero-orb left-[8%] top-[32%] h-24 w-24 bg-cyan-300/25" />
         <div className="flex flex-col justify-center">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -41,6 +43,21 @@ export function HomePage() {
           >
             Software portfolio orientado a contratacao
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.02 }}
+            className="mt-4 flex flex-wrap gap-3"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-white/80 px-4 py-2 text-sm text-slate-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200">
+              <FiZap className="text-brand-600 dark:text-cyan-300" />
+              Foco em backend e arquitetura
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-white/80 px-4 py-2 text-sm text-slate-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200">
+              <FiMapPin className="text-brand-600 dark:text-cyan-300" />
+              Sao Paulo, Brasil
+            </span>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +80,7 @@ export function HomePage() {
             transition={{ duration: 0.45, delay: 0.15 }}
             className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300"
           >
-            Desenvolvendo solucoes escalaveis com foco em Java, C#, .NET e arquitetura de software.
+            Desenvolvendo solucoes com foco em Java, C#, .NET, APIs REST e arquitetura de software, com atencao especial a organizacao, clareza tecnica e evolucao consistente para ambientes profissionais.
           </motion.p>
 
           <motion.div
@@ -115,7 +132,12 @@ export function HomePage() {
         <div className="flex flex-col justify-center gap-6">
           <ProfilePhoto />
           <div className="glass-card">
-            <p className="eyebrow">Snapshot profissional</p>
+            <div className="flex items-center justify-between gap-4">
+              <p className="eyebrow">Snapshot profissional</p>
+              <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-300">
+                Disponivel para estagio
+              </span>
+            </div>
             <div className="mt-5 grid gap-4">
               {quickProfile.map((item) => (
                 <div key={item.label} className="flex flex-col gap-1 border-b border-slate-200/80 pb-4 last:border-0 last:pb-0 dark:border-white/10">
@@ -167,14 +189,21 @@ export function HomePage() {
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">{category.category}</h3>
               <div className="mt-6 grid gap-4">
                 {category.items.map((item) => (
-                  <div key={item.name} className="rounded-[1.4rem] border border-slate-200/80 bg-white/70 p-5 dark:border-white/10 dark:bg-white/[0.03]">
-                    <div className="flex items-center justify-between gap-4">
-                      <h4 className="text-lg font-semibold text-slate-950 dark:text-white">{item.name}</h4>
+                  <div key={item.name} className="surface-card">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-4">
+                        <div className="icon-badge h-11 w-11 shrink-0 rounded-xl">
+                          <item.icon size={18} />
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-slate-950 dark:text-white">{item.name}</h4>
+                          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.description}</p>
+                        </div>
+                      </div>
                       <span className="rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-cyan-300">
                         {item.level}
                       </span>
                     </div>
-                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -348,12 +377,12 @@ export function HomePage() {
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="grid gap-4">
-            {contactLinks.map(({ icon: Icon, label, value, href }) => (
+            {contactLinks.map(({ icon: Icon, label, value, href, external }) => (
               <a
                 key={label}
                 href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noreferrer" : undefined}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
                 className="glass-card flex items-center gap-4"
               >
                 <div className="icon-badge">

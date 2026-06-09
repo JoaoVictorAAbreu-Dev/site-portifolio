@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://JoaoVictorAAbreu-Dev.github.io/joao-victor-portfolio/sitemap.xml
+Sitemap: https://joaovictoraabreu.dev/sitemap.xml

@@ -3,14 +3,22 @@ import {
   FiAward,
   FiBook,
   FiBriefcase,
+  FiCloud,
   FiCode,
+  FiCommand,
   FiDatabase,
+  FiFileText,
   FiGitBranch,
   FiGithub,
   FiLayers,
   FiLinkedin,
   FiMail,
   FiMessageCircle,
+  FiMonitor,
+  FiPackage,
+  FiPenTool,
+  FiPocket,
+  FiTerminal,
   FiServer,
   FiTrendingUp,
   FiUsers,
@@ -45,10 +53,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const heroMetrics: MetricItem[] = [
-  { label: "Projetos desenvolvidos", value: "10+", note: "academicos e pessoais" },
-  { label: "Tecnologias estudadas", value: "15+", note: "backend, frontend e tooling" },
-  { label: "Semestres concluidos", value: "3+", note: "evolucao continua na FIAP" },
-  { label: "GitHub contributions", value: "Ativo", note: "repositorios atualizados em 2026" },
+  { label: "Projetos desenvolvidos", value: "10+", note: "aplicacoes academicas e autorais" },
+  { label: "Tecnologias estudadas", value: "15+", note: "backend, frontend e ferramentas" },
+  { label: "Semestres concluidos", value: "3+", note: "base consolidada em evolucao" },
+  { label: "Perfil no GitHub", value: "Ativo", note: "repositorios publicados e atualizados" },
 ];
 
 export const skillCategories: SkillCategory[] = [
@@ -59,26 +67,31 @@ export const skillCategories: SkillCategory[] = [
         name: "Java",
         level: "Intermediario",
         description: "POO, organizacao de dominio, modelagem orientada a objetos e projetos academicos.",
+        icon: FiCode,
       },
       {
         name: "Spring Boot",
         level: "Em consolidacao",
         description: "Base para APIs REST, autenticacao, documentacao e padroes de backend moderno.",
+        icon: FiServer,
       },
       {
         name: "C#",
         level: "Fundamentos aplicados",
         description: "Estudo orientado a logica de negocio, legibilidade e evolucao para ambiente corporativo.",
+        icon: FiTerminal,
       },
       {
         name: ".NET",
         level: "Aprendendo",
         description: "Foco em APIs, estrutura de projetos e maturidade para vagas backend.",
+        icon: FiPackage,
       },
       {
         name: "Node.js",
         level: "Secundario",
         description: "Uso em interfaces e projetos full stack quando necessario.",
+        icon: FiCommand,
       },
     ],
   },
@@ -89,21 +102,25 @@ export const skillCategories: SkillCategory[] = [
         name: "React",
         level: "Intermediario",
         description: "Componentizacao, interfaces responsivas e organizacao por modulos.",
+        icon: FiMonitor,
       },
       {
         name: "TypeScript",
         level: "Intermediario",
         description: "Tipagem para manutencao, previsibilidade e escalabilidade do frontend.",
+        icon: FiFileText,
       },
       {
         name: "HTML",
         level: "Avancando",
         description: "Semantica, estrutura acessivel e base para boa experiencia.",
+        icon: FiLayers,
       },
       {
         name: "CSS",
         level: "Avancando",
         description: "Layouts responsivos, consistencia visual e refinamento de interface.",
+        icon: FiPenTool,
       },
     ],
   },
@@ -114,16 +131,19 @@ export const skillCategories: SkillCategory[] = [
         name: "PostgreSQL",
         level: "Em estudo pratico",
         description: "Modelagem, consultas SQL e base para APIs e persistencia confiavel.",
+        icon: FiDatabase,
       },
       {
         name: "MySQL",
         level: "Fundamentos",
         description: "Conceitos de tabelas, joins, integridade e consultas estruturadas.",
+        icon: FiDatabase,
       },
       {
         name: "SQL Server",
         level: "Aprendendo",
         description: "Contato inicial com ecossistema Microsoft e organizacao de dados.",
+        icon: FiDatabase,
       },
     ],
   },
@@ -134,31 +154,37 @@ export const skillCategories: SkillCategory[] = [
         name: "Git",
         level: "Uso frequente",
         description: "Versionamento, historico limpo e trabalho incremental.",
+        icon: FiGitBranch,
       },
       {
         name: "GitHub",
         level: "Uso frequente",
         description: "Repositorios, publicacao, revisao e portfolio tecnico.",
+        icon: FiGithub,
       },
       {
         name: "Docker",
         level: "Basico",
         description: "Containers e reproducao de ambientes de desenvolvimento.",
+        icon: FiPackage,
       },
       {
         name: "Postman",
         level: "Basico a intermediario",
         description: "Teste de endpoints e validacao de contratos de API.",
+        icon: FiPocket,
       },
       {
         name: "IntelliJ",
         level: "Uso academico",
         description: "Desenvolvimento Java com produtividade e depuracao.",
+        icon: FiCode,
       },
       {
         name: "VS Code",
         level: "Uso diario",
         description: "Desenvolvimento web, scripts e organizacao geral do fluxo.",
+        icon: FiMonitor,
       },
     ],
   },
@@ -169,16 +195,19 @@ export const skillCategories: SkillCategory[] = [
         name: "GitHub Actions",
         level: "Aprendendo",
         description: "Interesse em pipelines, validacao automatica e padrao profissional.",
+        icon: FiGitBranch,
       },
       {
         name: "Azure",
         level: "Aprendendo",
         description: "Exploracao inicial de cloud com foco em empregabilidade backend.",
+        icon: FiCloud,
       },
       {
         name: "Docker Compose",
         level: "Basico",
         description: "Orquestracao simples para apps e servicos locais.",
+        icon: FiPackage,
       },
     ],
   },
@@ -435,22 +464,22 @@ export const featuredRepositories = [
   {
     name: "Sprint02-CPAD-motiva-orion-mobile",
     url: "https://github.com/JoaoVictorAAbreu-Dev/Sprint02-CPAD-motiva-orion-mobile",
-    note: "Aplicacao mobile com foco operacional.",
+    note: "Aplicacao mobile com foco operacional e fluxo de inspecao.",
   },
   {
     name: "Sprint02-Apllication-development",
     url: "https://github.com/JoaoVictorAAbreu-Dev/Sprint02-Apllication-development",
-    note: "Dashboard web com narrativa orientada a dados.",
+    note: "Dashboard web com narrativa orientada a monitoramento e decisao.",
   },
   {
     name: "Sprint02-POO",
     url: "https://github.com/JoaoVictorAAbreu-Dev/Sprint02-POO",
-    note: "Projeto Java com POO e organizacao de dominio.",
+    note: "Projeto Java com POO, modelagem e organizacao de dominio.",
   },
   {
     name: "Bot_NBA",
     url: "https://github.com/JoaoVictorAAbreu-Dev/Bot_NBA",
-    note: "Automacao e integracao com APIs externas.",
+    note: "Automacao com integracoes externas e leitura de dados.",
   },
 ];
 
@@ -561,19 +590,20 @@ export const contactLinks: ContactLink[] = [
     value: "linkedin.com/in/joaovictoraabreu",
     href: "https://www.linkedin.com/in/jo%C3%A3ovictoraabreu",
     icon: FiLinkedin,
+    external: true,
   },
   {
-    label: "WhatsApp",
-    value: "Conversar diretamente",
-    href: "https://wa.me/5511999999999",
+    label: "Contato rapido",
+    value: "Disponivel por email ou LinkedIn",
+    href: "mailto:jv9217096@gmail.com?subject=Contato%20rapido%20via%20portfolio",
     icon: FiMessageCircle,
   },
 ];
 
 export const aboutPoints = [
-  "Tenho direcionado minha formacao para backend porque gosto de pensar em estrutura, integracao, regras de negocio e confiabilidade de software.",
-  "Meu interesse vai alem de implementar funcionalidades: busco entender arquitetura, responsabilidade entre camadas, persistencia e qualidade de codigo.",
-  "Ao longo da faculdade, venho transformando projetos academicos em oportunidades de evolucao tecnica, fortalecendo capacidade analitica, trabalho em equipe e aprendizado continuo.",
+  "Tenho direcionado minha formacao para backend porque me interesso por estrutura de software, integracao entre sistemas, regras de negocio e confiabilidade tecnica.",
+  "Meu foco nao esta apenas em construir funcionalidades. Busco entender arquitetura, contratos de API, responsabilidade entre camadas e qualidade de implementacao.",
+  "Ao longo da graduacao, venho usando projetos academicos como espaco de evolucao tecnica, fortalecendo repertorio pratico, capacidade analitica e colaboracao em equipe.",
 ];
 
 export const quickProfile = [
@@ -581,6 +611,7 @@ export const quickProfile = [
   { label: "Formacao", value: "Ciencia da Computacao - FIAP" },
   { label: "Especialidade em construcao", value: "Backend Java, C# e .NET" },
   { label: "Interesse tecnico", value: "APIs REST, banco de dados e arquitetura" },
+  { label: "Disponibilidade", value: "Aberto a estagio, desafios tecnicos e networking" },
 ];
 
 export const footerLinks = [
